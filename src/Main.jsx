@@ -178,7 +178,7 @@ const Main = () => {
           <Typography variant="h4" sx={{ marginBottom: "20px", color: "white", textShadow: "1px 1px 3px rgba(0,0,0,0.7)", fontSize: { xs: "1.5rem", sm: "2rem" }}}>
            Download the free version here!
           </Typography>
-          <a href="/apk/MasterLab1.0Free.apk" download>
+          <a href="https://github.com/AlexOlguin-dev/MasterLabApkFreeVersion/releases/download/v1.0/MasterLab1.0Free.apk" download>
             <img src={Download} alt="Download" style={{ width: 100, height: 100, marginBottom: "20px", cursor: "pointer" }}/>
           </a>
           <Box sx={{ marginLeft: "-10px", backgroundColor: "rgba(255, 255, 255, 0.7)", padding: "5px 24px", borderRadius: 2, mb: 2, width: { xs: 250, sm: 500 }}}>
