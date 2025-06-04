@@ -15,6 +15,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 // Imágenes de ejemplo (reemplaza por las tuyas)
 import Pokedex from "../src/assets/img/Pokedex/pokedex.png";
+import Download from "../src/assets/img/Top/download.png";
 import Pokedex_1 from '../src/assets/img/Pokedex/pokedex_1.png';
 import Pokedex_2 from '../src/assets/img/Pokedex/pokedex_2.png';
 import Pokedex_3 from '../src/assets/img/Pokedex/pokedex_3.png';
@@ -149,14 +150,14 @@ const Main = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="sticky" sx={{ backgroundColor: "black", top: 0, zIndex: theme.zIndex.drawer + 1 }}>
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="logo" sx={{ mr: 2 }} onClick={() => navigate('/download')}>
+          <IconButton edge="start" color="inherit" aria-label="logo" sx={{ mr: 2 }} onClick={() => navigate('/')}>
             <img src={MainIcon} alt="Main Icon" style={{ width: 30, height: 30 }} />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             MasterLab
           </Typography>
           {isSmallScreen ? (
-            <IconButton color="inherit" aria-label="download">
+            <IconButton color="inherit" aria-label="download" onClick={() => navigate('/download')}>
               <DownloadIcon />
             </IconButton>
           ) : (
@@ -166,14 +167,21 @@ const Main = () => {
       </AppBar>
 
       {/**TITULO */}
-      <Box sx={{ position: "relative", width: "100%", height: "750px", backgroundImage: `url(${BGTop})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+      <Box sx={{ position: "relative", width: "100%", height: "900px", backgroundImage: `url(${BGTop})`, backgroundSize: "cover", backgroundPosition: "center" }}>
         {/* Capa roja traslúcida */}
         <Box sx={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(255, 0, 0, 0.4)" }}/>
 
         {/* Contenido centrado */}
         <Box sx={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", px: 2 }}>
           <img src={Hand} alt="Phone App" style={{ maxWidth: "100%", height: "auto", marginBottom: "20px" }}/>
-          <Box sx={{ backgroundColor: "rgba(255, 255, 255, 0.7)", padding: "5px 24px", borderRadius: 2, mb: 2, width: { xs: 300, sm: 500 }}}>
+          {/* Icono de descarga */}
+          <Typography variant="h4" sx={{ marginBottom: "20px", color: "white", textShadow: "1px 1px 3px rgba(0,0,0,0.7)", fontSize: { xs: "1.5rem", sm: "2rem" }}}>
+           Download the free version here!
+          </Typography>
+          <a href="/apk/MasterLab1.0Free.apk" download>
+            <img src={Download} alt="Download" style={{ width: 100, height: 100, marginBottom: "20px", cursor: "pointer" }}/>
+          </a>
+          <Box sx={{ marginLeft: "-10px", backgroundColor: "rgba(255, 255, 255, 0.7)", padding: "5px 24px", borderRadius: 2, mb: 2, width: { xs: 250, sm: 500 }}}>
             <img src={Title} alt="title" style={{ width: "100%", height: "auto" }}/>
           </Box>
           <Typography variant="h4" sx={{ color: "white", textShadow: "1px 1px 3px rgba(0,0,0,0.7)", fontSize: { xs: "1.5rem", sm: "2rem" }}}>
