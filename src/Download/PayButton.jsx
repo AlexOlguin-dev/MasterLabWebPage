@@ -7,6 +7,9 @@ const PayButton = ({ onPaymentSuccess }) => {
     // Limpia PayPal antes de renderizar
     if (window.paypal && paypalRef.current && paypalRef.current.children.length === 0) {
       window.paypal.Buttons({
+        funding: {
+          disallowed: [window.paypal.FUNDING.CARD]
+        },
         createOrder: function(data, actions) {
           return actions.order.create({
             purchase_units: [{
