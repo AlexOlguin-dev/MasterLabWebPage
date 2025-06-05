@@ -53,9 +53,9 @@ const Download = () => {
             </Box>
           </>
         ) : (
-          <Box sx={{ zIndex: 2, backgroundColor: 'white', padding: 4, borderRadius: 2 }}>
+          <Box sx={{ zIndex: 2, backgroundColor: 'white', padding: 4, borderRadius: 2, textAlign: 'center' }}>
             <Typography variant="h6" gutterBottom>Thanks for your purchase:</Typography>
-            <Button variant="contained" color="primary" href={process.env.REACT_APP_DOWNLOAD_LINK} download>
+            <Button variant="contained" href={process.env.REACT_APP_DOWNLOAD_LINK} download sx={{ borderRadius: 0, backgroundColor: 'black', color: 'white', '&:hover': { backgroundColor: '#333' }}}>
               Download APK
             </Button>
           </Box>
